@@ -1,0 +1,196 @@
+body {
+  width: 100%;
+  margin: 0;
+}
+
+main {
+  font-size: 1.2em;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  margin: 0px;
+}
+
+#menu {
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 3px;
+  background-color: rgb(179, 225, 229);
+  min-width: 1250px;
+}
+
+#menu input{
+  font-weight: bold;
+}
+
+#principal {
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 525px;
+  min-width: 1130px;
+}
+
+#imagenTitulo {
+  width: 120px;
+  margin-left: 100px;
+}
+
+.menu li {
+  display: inline-block;
+  list-style: none;
+  top: 50%;
+  font: bold 14px sans-serif;
+}
+
+#datosdelejercicio {
+  box-sizing: border-box;
+  float: left;
+  margin-right: 10px;
+  height: 525px;
+  width: 60%;
+}
+
+#datosdelejercicio > h1 {
+  width: 60%;
+}
+
+#cajamapa {
+  display: inline;
+  box-sizing: border-box;
+  width: 39%;
+  float: right;
+}
+
+.pie {
+  position: absolute;
+  top: 650px;
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+h3 {
+  box-sizing: border-box;
+  background: rgb(8, 45, 82);
+  color: white;
+  padding-left: 10%;
+}
+
+fieldset {
+  background-color: rgb(237, 240, 243);
+  margin: 0;
+  height: 400px;
+}
+
+header {
+  position: relative;
+  align-items: center;
+  color: rgb(8, 45, 82);
+  min-width: 1140px;
+}
+
+#titulo {
+  display: inline;
+  position: absolute;
+  top: -20%;
+  margin-left: 2%;
+  vertical-align: bottom;
+  font-size: 64px;
+}
+
+/* clase que se aplica al div que contiene el mapa de Google Maps*/
+#map_canvas {
+  height: 420px;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid black;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  display: inline;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  padding: 1px 10px 10px 10px;
+  font-size: 20px;
+  margin-left: 5px;
+  transition: border-bottom 80ms;
+}
+
+li:has(input:hover:not([disabled])) {
+  border-bottom: 7px solid rgb(240, 137, 41);
+  padding-bottom: 3px;
+}
+
+.col-25 {
+  float: left;
+  width: 23%;
+  margin-top: 10px;
+}
+
+.col-75 {
+  float: left;
+  width: 77%;
+  margin-top: 10px;
+}
+
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#noSeleccionar {
+  color: #999;
+}
+
+input:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+label{
+  font-weight: bold;
+}
+
+.campo{
+  font-size: 16px;
+}
+
+/*Footer*/
+footer {
+  margin-top: 20px;
+  border-top: 2px solid #5b7065;
+  color: black;
+  width: 100%;
+}
+
+footer p {
+  text-align: center;
+  min-width: 1000px;
+}
+
+#direccionMapa{
+  text-align: center;
+}
+
+#menu input:hover:not([disabled]){
+  font-weight: bold;
+  color:white;
+  background-color: rgb(5, 5, 49);
+}

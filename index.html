@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Dispositivos IOT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="icon" href="data:,"> <!--Elimina error favicon.ico-->
+  <!--Google Maps-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxE0ayXHJP7BhRDk-xWf1M77YUVk5pBY&libraries=geometry"
+    defer></script>
+  <!-- SweetAlert -->
+  <!--Plugin con el cual podremos dar un aspecto profesional a los mensajes que lancemos a los usuarios acorde a las tendencias actuales -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <!--Script operaciones Google Maps-->
+  <script src="./js/GoogleMaps.js" defer></script>
+  <!--Script operaciones contra la base de datos-->
+  <script src="./js/BaseDeDatos.js" defer></script>
+  <!--Script funciones-->
+  <script src="./js/Funciones.js" defer></script>
+  <!--Script objetos y eventos sobre el documento-->
+  <script src="./js/Index.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <header class="cabecera">
+      <img id="imagenTitulo" src="./images/JARL_Logo.jpg" alt="JARL_Logo.jpg" title="JARL_Logo">
+      <h1 id="titulo">Dispositivos IOT</h1>
+    </header>
+
+
+    <div id="menu">
+      <ul>
+        <li>
+          <input type="button" id="bGrabar" value="Nuevo registro">
+        </li>
+        <li>
+          <input type="button" id="bModificar" value="Modificar registro">
+        </li>
+        <li>
+          <input type="button" id="bBorrar" value="Borrar registro">
+        </li>
+        <li>
+          <input type="button" id="bPrimero" value="Visualizar primero">
+        </li>
+        <li>
+          <input type="button" id="bUltimo" value="Visualizar último">
+        </li>
+        <li>
+          <input type="button" id="bSiguiente" value="Siguiente">
+        </li>
+        <li>
+          <input type="button" id="bAnterior" value="Anterior">
+        </li>
+        <li>
+          <a href="http://www.informaticasc.com/curso22_23/Rodriguez/Dispositivos_IOT/pdf/ListadoDispositivosIOT.php">
+            <input type="button" id="bPdf" value="Crear PDF">
+          </a>
+        </li>
+        <li>
+          <input type="button" id="bSalir" value="Salir">
+        </li>
+      </ul>
+    </div>
+
+    <div id="principal">
+      <div id="datosdelejercicio">
+        <h3>Datos dispositivo IOT</h3>
+        <fieldset>
+          <div class="container">
+            <form name="form" id="form">
+              <div class="row">
+                <div class="col-25">
+                  <label for="iId">Id</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" class="campo" id="iId" name="iId" style="width:100px" readonly>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="sTipo">Tipo</label>
+                </div>
+                <div class="col-75">
+                  <select id="sTipo" class="campo" name="sTipo">
+                    <option class="Seleccionar" value="Seleccionar" disabled selected>Seleccionar...</option>
+                    <option value="Caudal">Caudal</option>
+                    <option value="Contaminacion">Contaminación</option>
+                    <option value="Humedad">Humedad</option>
+                    <option value="Luminosidad">Luminosidad</option>
+                    <option value="Presion">Presión</option>
+                    <option value="Temperatura">Temperatura</option>
+                    <option value="Viento">Viento</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="iCantidad">Cantidad</label>
+                </div>
+                <div class="col-75">
+                  <input type="number" class="campo" id="iCantidad" name="iCantidad" min="1" style="width:100px" value="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="iHora">Hora</label>
+                </div>
+                <div class="col-75">
+                  <input type="time" class="campo" id="iHora" name="iHora" step="1" value="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="iFecha">Fecha</label>
+                </div>
+                <div class="col-75">
+                  <input type="date" class="campo" id="iFecha" name="iFecha" max="<?php echo date('Y-m-d');?>">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="iLatitud">Latitud</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" class="campo" id="iLatitud" name="iLatitud" readonly style="width:225px" placeholder="Marcar localización en el mapa.">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="iLongitud">Longitud</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" class="campo" id="iLongitud" name="iLongitud" readonly style="width:225px" placeholder="Marcar localización en el mapa.">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="iDireccion">Dirección</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" class="campo" id="iDireccion" name="iDireccion" readonly style="width:500px" placeholder="Marcar localización en el mapa.">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="iDescripcion">Descripción</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" class="campo" id="iDescripcion" name="iDescripcion" style="width:300px" maxlength="100" placeholder="Marcar localización en el mapa.">
+                </div>
+              </div>
+            </form>
+          </div>
+        </fieldset>
+      </div>
+
+      <div id="cajamapa">
+        <h3>Mapa</h3>
+        <div class="map_canvas" id="map_canvas">
+        </div>
+        <div id="direccionMapa"></div>
+      </div>
+    </div>
+  </main>
+  <!--Pie de página-->
+  <footer class="pie">
+    <p>Desarrollo de aplicaciones Web(DAW) &copy; CIFP Santa Catalina</p>
+    <p>Realizado por: José A. Rodríguez López.</p>
+  </footer>
+
+</body>
+
+</html>
